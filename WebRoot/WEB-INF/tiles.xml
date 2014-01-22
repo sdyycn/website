@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  tiles-definitions 
+	PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+ 	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd" >
+<tiles-definitions>  
+    <definition name="manageLayout" template="/m/tiles/m_layout.jsp">  
+        <put-attribute name="title" value="后台管理系统"/>  
+        <put-attribute name="m_header" value="/m/tiles/m_header.jsp"/>
+        <put-attribute name="m_navigator" value="/m/tiles/m_navigator.jsp"/>  
+        <put-attribute name="m_body" value="/m/tiles/m_body.jsp"/>
+        <put-attribute name="m_footer" value="/m/tiles/m_footer.jsp"/>  
+	</definition>
+	
+	<definition name="environmentLayout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/environment.jsp" /> 
+    </definition>
+    
+	<definition name="siteinfoLayout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/siteinfo.jsp" /> 
+    </definition>
+    
+    <definition name="menusLayout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/menus.jsp" /> 
+    </definition>
+    
+    <definition name="dbLayout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/db.jsp" /> 
+    </definition>
+    
+    <definition name="articlesLayout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/articles.jsp" /> 
+    </definition>
+    <definition name="article_add_Layout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/article_add.jsp" /> 
+    </definition>
+    <definition name="article_modify_Layout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/article_modify.jsp" /> 
+    </definition>
+
+    <definition name="membersLayout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/members.jsp" /> 
+    </definition>
+    <definition name="member_setting_Layout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/member_setting.jsp" /> 
+    </definition>
+    <definition name="member_add_Layout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/member_add.jsp" /> 
+    </definition>
+    <definition name="member_modify_Layout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/member_modify.jsp" /> 
+    </definition>
+    
+    <definition name="adminsLayout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/admins.jsp" /> 
+    </definition>
+    <definition name="admin_add_Layout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/admin_add.jsp" /> 
+    </definition>
+    <definition name="admin_modify_Layout" extends="manageLayout"> 
+        <put-attribute name="m_body" value="/m/tiles/admin_modify.jsp" /> 
+    </definition>
+    
+</tiles-definitions>

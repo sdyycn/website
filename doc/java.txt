@@ -1,0 +1,4 @@
+1. eclipse tomcat struts项目所需lib库，把struts下载文件中的例子struts-blank.war里的lib全部COPY过来
+2. eclipse 插件安装（3种方法，建议link方法)
+3. property 文件编辑，使用propedit插件
+4. vim vrapper

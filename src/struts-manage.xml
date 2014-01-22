@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="cn.cms.manage" namespace="/m" extends="struts-default">
+		<result-types>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+        </result-types>
+        <interceptors>
+            <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+        </interceptors>
+
+		<action name="regist" class="registAction">
+			<result name="input">/m/regist.jsp</result>
+			<result name="error">/m/regist.jsp</result>
+			<result>/m/login.jsp</result>
+		</action>
+		<action name="validateCodes" class="imageCodeAction">
+      		<result type="stream">
+               <param name="contentType">image/jpeg</param>
+               <param name="inputName">inputStream</param>
+        	</result>
+ 		</action>
+	</package>
+</struts>

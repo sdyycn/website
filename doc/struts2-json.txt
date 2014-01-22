@@ -1,0 +1,10 @@
+java.lang.ClassNotFoundException: com.opensymphony.xwork2.util.TextUtils
+分类： Json Java程序异常 2011-08-08 16:55 3001人阅读 评论(4) 收藏 举报
+strutsjar
+ 当前使用struts2.23版本，使用用了jsonplugin-0.3x.jar报java.lang.ClassNotFoundException: com.opensymphony.xwork2.util.TextUtils错。
+解决,
+在下载好的Struts2的lib文件夹里找到了以下jar包：
+json-lib-2.x.jar
+struts2-json-plugin-2.x.x.jar
+struts2-junit-plugin-2.x.x.jar
+上面三个包加入项目里之后，再删除jsonplugin-0.3x.jar包

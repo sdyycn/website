@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="ajax" namespace="/m" extends="json-default">
+    	<action name="*_delete_json" class="{1}Action" method="delete">
+    		<result type="json">
+    			<param name="root">result</param>
+    		</result>
+    	</action>
+    </package>
+
+    
+	<package name="tiles" namespace="/m" extends="tiles-default">
+		<action name="login" class="loginAction">
+			<result name="input">/m/login.jsp</result>
+			<result name="login">/m/login.jsp</result>
+			<result name="success" type="redirectAction">manage</result>
+		</action>
+		<action name="logout" class="loginAction" method="logout">
+			<result>/m/login.jsp</result>
+		</action>
+
+		<action name="admins" class="adminAction" method="main">
+			<result name="login">/m/login.jsp</result>
+			<result name="success" type="tiles">adminsLayout</result>
+		</action>
+		<!-- action name="admin_add" class="adminAction" method="add"> -->
+		<action name="admin_*" class="adminAction" method="{1}">
+			<result name="input" type="tiles">admin_{1}_Layout</result>
+			<result name="login">/m/login.jsp</result>
+			<result name="success" type="redirectAction">admins</result>
+		</action>
+		
+		<action name="members" class="memberAction" method="main">
+			<result name="login">/m/login.jsp</result>
+			<result name="success" type="tiles">membersLayout</result>
+		</action>
+		<action name="member_*" class="memberAction" method="{1}">
+			<result name="input" type="tiles">member_{1}_Layout</result>
+			<result name="login">/m/login.jsp</result>
+			<result name="success" type="redirectAction">members</result>
+		</action>
+		
+		<action name="menus" class="menuAction" method="main">
+			<result name="login">/m/login.jsp</result>
+			<result name="success" type="tiles">menusLayout</result>
+		</action>
+		
+		<action name="articles" class="articleAction" method="main">
+			<result name="login">/m/login.jsp</result>
+			<result name="success" type="tiles">articlesLayout</result>
+		</action>
+		<action name="article_*" class="articleAction" method="{1}">
+			<result name="login">/m/login.jsp</result>
+			<result name="input" type="tiles">article_{1}_Layout</result>
+			<result name="success" type="tiles">articlesLayout</result>
+		</action>
+				
+		<!-- action name="admin" class="adminAction" > -->
+		<action name="*" class="{1}Action">
+			<result name="login">/m/login.jsp</result>
+			<result name="success" type="tiles">{1}Layout</result>
+		</action>
+
+    </package>
+</struts>

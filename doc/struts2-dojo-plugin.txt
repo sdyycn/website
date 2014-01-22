@@ -1,0 +1,8 @@
+今天在做Struts 2（版本为struts-2.3.1.2）的国际化的相关实验时，使用Struts 2的日期控件标签<s:datetimepicker />时，Myeclipse提示:Unknown tag (s:datetimepicker)。并且运行时报错：
+No tag "datetimepicker" defined in tag library imported with prefix "s" 
+    查了网上的资料，说struts-2.1.6版本以后把struts2.0中的和ajax相关的，如datetimepicker，tree，treenode 都移动到了dojo中了 。解决方案如下：
+第一步：引入相关的Jar包。在Struts 2的lib目录里把struts2-dojo-plugin-2.3.1.2.jar（根据你使用的Struts版本而定）加入你相关项目的/WEB-INF/lib目录下面。
+第二步：在使用<s:datetimepicker />标签的JSP文件顶部加入<%@ taglib prefix="sx" uri="/struts-dojo-tags"%>。
+第三步：在使用<s:datetimepicker />标签的前面加入<sx:head/>（不局限于某个地方，但是必须在使用<s:datetimepicker />标签的前面加入）。
+第四部：把使用的<s:datetimepicker />标签改为<sx:datetimepicker />标签。
+    完成以上四个步骤之后，在重新部署你的项目，便可见到你想要的Struts 2日期标签。

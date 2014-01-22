@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="admin" catalog="eclipse"
+		class="cn.cms.dao.entity.Admin">
+	</table>
+	<table name="user" catalog="eclipse"
+		class="cn.cms.dao.entity.User">
+	</table>
+	<table name="site" catalog="eclipse"
+		class="cn.cms.manage.entity.Site">
+	</table>
+	<table name="menu" catalog="eclipse"
+		class="cn.cms.dao.entity.Menu">
+	</table>
+	<table name="article" catalog="eclipse" class="cn.cms.dao.entity.Article"></table>
+</hibernate-reverse-engineering>
